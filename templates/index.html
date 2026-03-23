@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Crédito - Andina-Tech</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header role="banner">
+        <h1>Sistema de Gestión de Créditos Andina-Tech</h1>
+        <p>Plataforma segura para evaluación pre-operativa</p>
+    </header>
+
+    <main aria-label="Formulario de solicitud de crédito">
+        
+        <section aria-labelledby="titulo-solicitud">
+            <h2 id="titulo-solicitud">Ingrese sus datos para evaluación</h2>
+            
+            <article>
+                <form action="/procesar" method="POST" aria-label="Formulario de datos del cliente">
+                    
+                    <fieldset>
+                        <legend>Perfil del Solicitante</legend>
+                        <label for="edad">Edad:</label>
+                        <input type="number" id="edad" name="edad" required aria-required="true" min="18">
+
+                        <label for="salario">Salario Mensual (USD):</label>
+                        <input type="number" id="salario" name="salario" required aria-required="true" min="0">
+
+                        <label for="puntaje">Puntaje de Crédito (0-1000):</label>
+                        <input type="number" id="puntaje" name="puntaje" required aria-required="true" min="0" max="1000">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Detalles del Crédito</legend>
+                        <label for="monto">Monto Solicitado (USD):</label>
+                        <input type="number" id="monto" name="monto" required aria-required="true" min="100">
+
+                        <label for="ubicacion">Ubicación de Residencia:</label>
+                        <select id="ubicacion" name="ubicacion" required aria-required="true">
+                            <option value="urbana">Urbana</option>
+                            <option value="rural">Rural</option>
+                        </select>
+                    </fieldset>
+
+                    <button type="submit">Evaluar y Procesar Solicitud</button>
+                </form>
+            </article>
+        </section>
+
+    </main>
+
+    <aside aria-labelledby="info-legal">
+        <h3 id="info-legal">Información Legal y Tasas</h3>
+        <p>Las tasas de interés base son del 15% con un seguro de vida del 5%. Estas condiciones pueden variar según su ubicación geográfica conforme a las políticas de Andina-Tech.</p>
+    </aside>
+
+    <footer role="contentinfo">
+        <p>&copy; 2026 Andina-Tech Logística y Créditos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
